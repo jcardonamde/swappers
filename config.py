@@ -8,7 +8,7 @@ class DevelopmentConfig(Config):
     
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
-    MAIL_USERNAME = 'betgames.dev@gmail.com'
+    MAIL_USERNAME = 'holamundo@gmail.com'
     MAIL_PASSWORD = 'tvjexteugiogfjpq' #config('MAIL_PASSWORD')  #os.environ.get('PASSWORD') -->Importando libreria OS
     MAIL_USE_TLS = True
     MAIL_USE_SSL = False
