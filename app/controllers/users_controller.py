@@ -2,6 +2,8 @@ from flask import render_template, redirect, session, request, flash
 from app import app
 from flask_bcrypt import Bcrypt        
 bcrypt = Bcrypt(app)
+from werkzeug.utils import secure_filename
+import os
 
 # Template preview
 @app.route('/')
@@ -57,13 +59,20 @@ def register():
     pw_hash = bcrypt.generate_password_hash(request.form['password'])
     print(pw_hash)
 
+    
+    image = request.files['image']
+    nombre_imagen = secure_filename(image.filename)
+    image.save(os.path.join(app.config['UPLOAD_FOLDER'], nombre_imagen)) #guardar la imagen
+
     data = {
         "first_name": request.form['first_name'],
         "last_name": request.form['last_name'],
         "email": request.form['email'],
-        "password" : pw_hash 
+        "password" : pw_hash ,
+        "city": request.form['city'],
+        "nickname": request.form['nickname'],
+        "image": nombre_imagen
     }
-    
     
     id = User.save(data)
 

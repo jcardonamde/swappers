@@ -10,3 +10,6 @@ def create_app(config):
     mail.init_app(app)
 
     return app
+
+
+app.config['UPLOAD_FOLDER'] = 'app/static/img/' # Esto es para indicar en cual folder se guardara la imagen
