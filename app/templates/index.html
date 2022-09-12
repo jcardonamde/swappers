@@ -4,9 +4,223 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/bases.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/header.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/videos.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/home.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/footer.css') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Experiencias que Conectan | Swappers</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'imgs/favicon.ico') }}">
 </head>
 <body>
-    <h1>Hola Mundo</h1>
+    <header>
+        <nav class="navbar justify-content-between p-1 nav__bar">
+            <a class="navbar-brand nav__bar_logo-a" href="#">
+                <img src="{{ url_for('static', filename = 'imgs/logo.jpeg') }}" alt="Logo Swappers"
+                    class="nav__bar_logo">
+            </a>
+            <ul class="nav nav-pills d-flex align-items-center m-3 nav__bar_links">
+                <li class="nav-item">
+                    <a href="#" class="nav-link nav__bar_links_option">Community</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link nav__bar_links_option">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="btn btn-outline-success btn-md nav__bar_links_active">Register</a>
+                </li>
+            </ul>
+        </nav>
+        <figure class="container__video_call-action">
+            <video class="background__video_home" autoplay loop muted src="/static/videos/timelapse_home.mp4"
+                type="video/mp4" id="video-header">
+            </video>
+            <div class="container bg-transparent call__action_header">
+                <div class="container bg-transparent call__action_description">
+                    <div class="call__action_description_pt1 align-items-center justify-content-center">
+                        <h1 class="text-center text-white mb-4">Exchange services <br> instead of buying them</h1>
+                        <button></button>
+                    </div>
+                    <h2 class="text-center text-white">in your city or remotely, you can find a great community <br>
+                        Publish your ad and you can change your services <br> for what interests you, other services or
+                        other things.</h2>
+                </div>
+                <div
+                    class="container d-flex flex-row justify-content-evenly bg-white text-dark align-items-center mt-4 call__action_searchs">
+                    <div>
+                        <label for="service_city" class="service_city_label">Where do you require the service?</label>
+                        <select class="form-select service_city_select" id="service_city" name="service_city">
+                            <option selected>Select an option</option>
+                            <option value="1">Bogota</option>
+                            <option value="2">Medellin</option>
+                            <option value="3">Cali</option>
+                            <option value="4">Bucaramanga</option>
+                            <option value="5">Santa Marta</option>
+                            <option value="6">Remote</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="type_service" class="type_service_label">What are you looking for?</label>
+                        <select class="form-select type_service_select" id="type_service" name="type_service">
+                            <option selected>Select a service</option>
+                            <option value="1">Dance classes</option>
+                            <option value="2">Repairs</option>
+                            <option value="3">Image consulting</option>
+                            <option value="4">Removals</option>
+                            <option value="5">Practice sports</option>
+                            <option value="6">Others</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="date_service" class="date_service_label">When you need it?</label>
+                        <input type="date" class="form-control date_service_select" id="date_service"
+                            name="date_service">
+                    </div>
+                    <div>
+                        <button type="button"
+                            class="btn btn-outline-info p-1 rounded-pill search_service-button">Search</button>
+                    </div>
+                </div>
+            </div>
+        </figure>
+    </header>
+    <main>
+        <section class="container d-flex flex-row justify-content-around">
+            <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Primary card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+            <div class="card text-bg-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Secondary card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+            <div class="card text-bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Success card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+            <div class="card text-bg-danger mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Danger card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+        </section>
+        <section class="container d-flex flex-row justify-content-around mt-3">
+            <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Primary card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+            <div class="card text-bg-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Secondary card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+            <div class="card text-bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Success card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+            <div class="card text-bg-danger mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Danger card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+        </section>
+        <section class="container d-flex flex-row justify-content-around mt-3">
+            <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Primary card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+            <div class="card text-bg-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Secondary card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+            <div class="card text-bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Success card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+            <div class="card text-bg-danger mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Danger card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+        </section>
+        <section class="users_experiences">
+            <h3 class="quienes-somos__titulo">¿You're looking for something new?</h3>
+            <p class="quienes-somos__descripcion">Hundreds of users have already lived the swappers experience</p>
+            <div class="personas">
+                <div class="persona">
+                    <div class="persona__imagen persona__imagen--roberta"></div>
+                    <span class="persona__nombre">Roberta</span>
+                    <span class="persona__funcion">Contenido</span>
+                </div>
+                <div class="persona">
+                    <div class="persona__imagen persona__imagen--marcela"></div>
+                    <span class="persona__nombre">Marcela</span>
+                    <span class="persona__funcion">Chef de cocina</span>
+                </div>
+                <div class="persona">
+                    <div class="persona__imagen persona__imagen--andrea"></div>
+                    <span class="persona__nombre">Andrea</span>
+                    <span class="persona__funcion">Pequeña Productora</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <h1>Aqui va el footer</h1>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.3.js"
+        integrity="sha256-goy7ystDD5xbXSf+kwL4eV6zOPJCEBD1FBiCElIm+U8=" crossorigin="anonymous" type="text/javascript">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+    </script>
+    <script src="{{ url_for('static', filename='/js/index.js') }}"></script>
 </body>
 </html>

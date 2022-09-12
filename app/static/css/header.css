@@ -1,0 +1,29 @@
+.nav__bar {
+    height: 120px;
+}
+
+.nav__bar_logo {
+    height: 110px;
+    width: 160px;
+}
+
+.nav__bar_links {
+    font-family: var(--Mulish);
+    font-size: 18px; 
+}
+
+.nav__bar_links_option {
+    color: var(--text-content1);
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.nav__bar_links_active {
+    background-color: var(--background-logo);
+    color: var(--text-links-nav);
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 15px;
+    width: 120px;
+}
+
