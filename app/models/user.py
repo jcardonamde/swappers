@@ -18,13 +18,27 @@ class User:
         self.image = data['image']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-    
+
+"""-----------------------------------------------------------------------------------------------------------------------------------------"""
+"""--------------------------------------------------metodos para crear y actualizar usuario------------------------------------------------"""
+"""-----------------------------------------------------------------------------------------------------------------------------------------"""
+
     @classmethod
     def save_user(cls, formulario):#metodo de clase para insertar un usuario en la base de datos con todos los datos sin excepción(first_name, last_name, nickname, email, city, password, image) y regresara id del usuario
         query = "INSERT INTO users(first_name, last_name, nickname, email, city, password, image) VALUES (%(first_name)s, %(last_name)s, %(nickname)s, %(email)s, %(city)s, %(password)s, %(image)s )"
         result = connectToMySQL('swappers').query_db(query, formulario)  
         return result 
 
+    @classmethod 
+    def update_user(cls, formulario): #metodo de clase que sirve para actualizar la información de un usuario(first_name, last_name, nickname, city), al cual debe enviarsele el id del usuario
+        query= "update users set first_name='%(first_name)s', last_name='%(last_name)s', nickname='%(nickname)s', city='%(city)s' where id=%(id)s"
+        result = connectToMySQL('swappers').query_db(query, formulario)
+        return result
+
+"""-----------------------------------------------------------------------------------------------------------------------------------------"""
+"""--------------------------------------------------metodos para validar información de registro-------------------------------------------"""
+"""-----------------------------------------------------------------------------------------------------------------------------------------"""
+    
     @staticmethod
     def valida_usuario(formulario):
         es_valido = True
@@ -58,6 +72,10 @@ class User:
 
         return es_valido
 
+"""-----------------------------------------------------------------------------------------------------------------------------------------"""
+"""--------------------------------------------------metodos para obtener información de un usuario-----------------------------------------"""
+"""-----------------------------------------------------------------------------------------------------------------------------------------"""
+
     @classmethod
     def get_by_email(cls, formulario): #debe enviarse email en el fromulario y regresara toda la informacion para la instancia
         query = "SELECT * FROM users WHERE email = %(email)s"
@@ -74,3 +92,4 @@ class User:
         result = connectToMySQL('swappers').query_db(query, formulario) #Select recibe lista
         user = cls(result[0])
         return user
+
