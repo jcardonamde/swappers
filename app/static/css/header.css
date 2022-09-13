@@ -3,8 +3,17 @@
 }
 
 .nav__bar_logo {
-    height: 110px;
-    width: 160px;
+    height: 80px;
+    width: 130px;
+}
+
+.nav__bar_slogan {
+    color: var(--text-content1);
+    font-family: var(--Mulish);
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 200px;
+    text-transform: uppercase;
 }
 
 .nav__bar_links {
@@ -26,4 +35,3 @@
     margin-right: 15px;
     width: 120px;
 }
-

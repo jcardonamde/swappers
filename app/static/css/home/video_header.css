@@ -3,6 +3,7 @@ body {
 }
 
 .background__video_home {
+    filter: brightness(30%);
     height: 100vh;
     object-fit: cover;
     width: 100%;
@@ -10,11 +11,11 @@ body {
     top: 0;
     left: 0;
     z-index: -1;
-    filter: brightness(30%);
 }
 
 .container__video_call-action {
     position: relative;
+    margin-bottom: 0px;
 }
 
 .call__action_header {
@@ -44,6 +45,7 @@ body {
 .call__action_description button {
     background-color: var(--text-content2);
     border-radius: 50px;
+    cursor: none;
     height: 18px;
     margin-left: 1px;
     margin-top: 93px;

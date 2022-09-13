@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,9 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/bases.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/header.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/videos.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/home.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/home/video_header.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/home/home.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/home/card_services.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/footer.css') }}" />
     <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,14 +20,15 @@
 </head>
 <body>
     <header>
-        <nav class="navbar justify-content-between p-1 nav__bar">
-            <a class="navbar-brand nav__bar_logo-a" href="#">
-                <img src="{{ url_for('static', filename = 'imgs/logo.jpeg') }}" alt="Logo Swappers"
-                    class="nav__bar_logo">
+        <nav class="navbar justify-content-between p-1 nav__bar bg-white">
+            <a class="navbar-brand nav__bar_logo-a" href="/">
+                <img src="{{ url_for('static', filename = 'imgs/logo_without_name.jpeg') }}" alt="Logo Swappers"
+                    class="nav__bar_logo ms-4">
             </a>
+            <p class="nav__bar_slogan mt-3">experiences that connect</p>
             <ul class="nav nav-pills d-flex align-items-center m-3 nav__bar_links">
                 <li class="nav-item">
-                    <a href="#" class="nav-link nav__bar_links_option">Community</a>
+                    <a href="#explore_services" class="nav-link nav__bar_links_option">Community</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link nav__bar_links_option">Login</a>
@@ -52,7 +55,7 @@
                 <div
                     class="container d-flex flex-row justify-content-evenly bg-white text-dark align-items-center mt-4 call__action_searchs">
                     <div>
-                        <label for="service_city" class="service_city_label">Where do you require the service?</label>
+                        <label for="service_city" class="service_city_label">Where are you?</label>
                         <select class="form-select service_city_select" id="service_city" name="service_city">
                             <option selected>Select an option</option>
                             <option value="1">Bogota</option>
@@ -88,106 +91,247 @@
             </div>
         </figure>
     </header>
-    <main>
-        <section class="container d-flex flex-row justify-content-around">
-            <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+    <main class="section__main_card_services">
+        <h1 class="text-center mt-5 main__title_card_services" name="explore_services" id="explore_services">Explore the
+            world of Swappers</h1>
+        <section class="container d-flex flex-row justify-content-around section__card_services">
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/hands.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 fw-bold">Professional services</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm mb-1">Languages</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">Web design</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Video and photography</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Workforce</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Hostelry</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Accounting</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Other services</a>
+
                 </div>
             </div>
-            <div class="card text-bg-secondary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Secondary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/business.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">business</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">machinery</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">furniture</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">products and stocks</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">transfers</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">raw material</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">accounting</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">recommendations</a>
+
                 </div>
             </div>
-            <div class="card text-bg-success mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Success card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/sports.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">sports</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">bikes</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">fitness</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">soccer</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Gym</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">boxing</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">running</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">tennis</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">diving</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">climbing</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">basketball</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">skates</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">others sports</a>
                 </div>
             </div>
-            <div class="card text-bg-danger mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Danger card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/tickets.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">tickets and events</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">art, theater and musicals</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">concerts and festivals</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">sports events</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">book Fair</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">cinema</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">trainings</a>
                 </div>
             </div>
         </section>
         <section class="container d-flex flex-row justify-content-around mt-3">
-            <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/vehicule.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">vehicles and cars</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">car accessories</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">caravans</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">classic cars</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">motorcycles</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">hybrids</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">vans</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">SUVs</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">scooters</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">spare parts and tools</a>
                 </div>
             </div>
-            <div class="card text-bg-secondary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Secondary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/houses.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">houses</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">decor</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">home appliances</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">tools</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">furniture</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">accessories</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">home care</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">space design</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">paintings</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">electric</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">security</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">various services</a>
                 </div>
             </div>
-            <div class="card text-bg-success mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Success card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/img_sounds.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">Image and sound</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">speakers</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">headphones</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">camera</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">video-cameras</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">sports camera</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">mixing table</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">televisions</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">projectors</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">theater at home</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">other similar</a>
                 </div>
             </div>
-            <div class="card text-bg-danger mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Danger card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/antiques.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">art and antiques</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">paintings</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">sculptures</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">antique furniture</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">antique objects</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">books</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">comics</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">musical instruments</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">collectibles</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">weird things</a>
                 </div>
             </div>
         </section>
         <section class="container d-flex flex-row justify-content-around mt-3">
-            <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/mobiles_tablets.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">mobiles and tablets</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">blackberry</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">bq</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">HTC</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">huawei</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">iPhone</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">LG</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">nokia</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">alcatel</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">z-teck</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">android generic</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Surface duo</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Motorola</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Samsung</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Sony</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">iPad</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">lenovo</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">other brands</a>
                 </div>
             </div>
-            <div class="card text-bg-secondary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Secondary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/mobiles_tablets.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">video games</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Computer games</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">games consoles</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">old consoles</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">retro games</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">nintendo 3DS - DS</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">PSP - PS Vita</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">playstation</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Xbox</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">recreational</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Wii - Wii U</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">playstation 5</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">other consoles</a>
                 </div>
             </div>
-            <div class="card text-bg-success mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Success card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/fashion.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">fashion</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">imitation jewelry</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">handbags</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">footwear</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">cosmetics</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Sunglasses</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">caps</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">jewels</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">perfumes</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">clocks</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">rings</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">sweaters</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">new collections</a>
                 </div>
             </div>
-            <div class="card text-bg-danger mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Danger card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/hobbies.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">hobbies</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">aquariums</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">airsoft</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">camping</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">drones</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">hunting and fishing</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">radio amateurs</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">telescopes</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">military items</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">miniatures</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">bows</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">compressed air</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">paintball</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">other hobbies</a>
                 </div>
             </div>
         </section>
@@ -213,8 +357,84 @@
             </div>
         </section>
     </main>
-    <footer>
-        <h1>Aqui va el footer</h1>
+    <footer class="rodapePrincipal">
+        <div class="container">
+            <section class="rodapePrincipal-navMap">
+                <h3 class="subtitulo ms-5">Site Map</h3>
+                <nav class="rodapePrincipal-navMap-list d-flex flex-row justify-content-around">
+                    <div class="d-flex flex-column">
+                        <h4 class="navmap-list-title navmap-list-title-backend">Services</h4>
+                        <a class="rodapePrincipal-navMap-link" href="#">Java</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">PHP</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Pascal</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Scala</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Python</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Java Web</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Assembly</a>
+                    </div>
+                    
+                    <div class="d-flex flex-column">
+                        <h4 class="navmap-list-title navmap-list-title-frontend">Lenguajes Frontend</h4>
+                        <a class="rodapePrincipal-navMap-link" href="#">Flexbox</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Desarrollo Web</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Javascript</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">AngularJS</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">ReactJS</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Polymer</a>
+                    </div>
+
+                    <div class="d-flex flex-column">
+                        <h4 class="navmap-list-title navmap-list-title-framework">Frameworks</h4>
+                        <a class="rodapePrincipal-navMap-link" href="#">Ruby on Rails</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">VRaptor</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">SpringMVC</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">NodeJS</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Django</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Bootstrap3</a>
+                    </div>
+
+                    <div class="d-flex flex-column">
+                        <h4 class="navmap-list-title navmap-list-title-bancoDeDados">Banco de datos</h4>
+                        <a class="rodapePrincipal-navMap-link" href="#">MySQL</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">MariaDB</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Postegres</a>
+                    </div>
+                </nav>
+            </section>
+        </div>
+        <section class="rodapePrincipal-patrocinadores">
+            <div class="container">
+                <ul class="rodapePrincipal-patrocinadores-list">
+                    <li>
+                        <a class="rodapePrincipal-patrocinadores-list-link patrocinadores-list-link-alura" href="#">
+                            <img src="img/logos/alura.svg" alt="Logo da Alura">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="rodapePrincipal-patrocinadores-list-link patrocinadores-list-link-caelum" href="#">
+                            <img src="img/logos/caelum.svg" alt="Logo da Caelum">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="rodapePrincipal-patrocinadores-list-link patrocinadores-list-link-casaDoCodigo"
+                            href="#">
+                            <img src="img/logos/cdc.svg" alt="Logo da Casa do Código">
+                        </a>
+                    </li>
+                </ul>
+                <form class="rodapePrincipal-contatoForm" action="#">
+                    <fieldset>
+                        <legend class="rodapePrincipal-contatoForm-legend" for="email-contato">Entre en contacto
+                        </legend>
+                        <div class="rodapePrincipal-contatoForm-fieldset">
+                            <input class="rodapePrincipal-contatoForm-emailInput" type="email" name="email-contato"
+                                id="email-contato">
+                            <button class="rodapePrincipal-contatoForm-submit" type="submit">Enviar</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
     </footer>
     <script src="https://code.jquery.com/jquery-2.1.3.js"
         integrity="sha256-goy7ystDD5xbXSf+kwL4eV6zOPJCEBD1FBiCElIm+U8=" crossorigin="anonymous" type="text/javascript">
@@ -223,4 +443,5 @@
     </script>
     <script src="{{ url_for('static', filename='/js/index.js') }}"></script>
 </body>
+
 </html>

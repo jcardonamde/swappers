@@ -1,27 +1,27 @@
 :root {
     /* Color principal */
     --background-logo: #c5ec87;
-
-    --background-content: #EAF2FD;
+    --background-content: #95e0e3;
     --background-header: #FFFFFF;
-    --background-main: #E5E5E5;
-    --background-footer: #FFFFFF;
-    --background-404: #138FF2;
+    --background-cards: #98c1d9;
+    --background-footer: #95e0e3;
 
     /* Color secundario */
     --text-content1: #7ad1e3;
     --text-content2: #c5ec87;
     --text-content3: #9ed4de;
     --text-content4: #95e0e3;
+    --text-content5: #FFFFFF;
     --text-links-nav: #000000;
 
 
-
-    --background-hover-button: #FFC300;
-    --background-hover-button2: #DC3545;
-    --background-hover-button3: #FFFFFF;
-    --text-search-bar: #F5F5F5;
+    /*Sin aplicar*/
+    --background-main: #E5E5E5;
     
+    --background-404: #138FF2;
+    /*Sin aplicar*/
+    --background-hover-button: #FFC300;
+    --text-search-bar: #F5F5F5;
     --text-content-hover1: #0B5ED7;
     --text-content-hover2: #FFC300;
     --text-content-hover3: #DC3545;

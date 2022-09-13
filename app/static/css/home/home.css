@@ -1,9 +1,13 @@
+body {
+    background-color: var(--background-logo);
+}
+
+
 /*parte 1*/
 .users_experiences {
     text-align: center;
     padding: 5rem;
 }
-
 
 /*parte 2*/
 .quienes-somos__titulo {
@@ -18,7 +22,6 @@
     font-size: 1.75rem;
     font-weight: 100;
 }
-
 
 /*parte 3*/
 .personas {
@@ -60,7 +63,7 @@
 }
 
 .persona__nombre {
-    color: var(--text-content2);
+    color: var(--text-content5);
     font-family: Pacifico, cursive;
     font-size: 2rem;
     font-weight: 500;
