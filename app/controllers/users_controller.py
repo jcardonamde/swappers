@@ -3,6 +3,7 @@ from flask import render_template, redirect, session, request, flash
 from app import app
 from app.models.users import User
 from app.models.services import Service
+from app.models.match import match
 
 
 from flask_bcrypt import Bcrypt        
@@ -42,7 +43,8 @@ def dashboard():
     filter_city = Service.filter_services_by_city(city)
     filter_type = Service.filter_services_by_type_services(type_service)
     user = User.get_by_id(formulario)
-    return render_template('dashboard.html', user=user, services=services, filter_city=filter_city, filter_type=filter_type)
+    matches= match.match(formulario)
+    return render_template('dashboard.html', user=user, services=services, filter_city=filter_city, filter_type=filter_type, matches= matches)
 
 
 
