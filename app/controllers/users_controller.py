@@ -1,5 +1,10 @@
+from crypt import methods
 from flask import render_template, redirect, session, request, flash
 from app import app
+from app.models.users import User
+from app.models.services import Service
+
+
 from flask_bcrypt import Bcrypt        
 bcrypt = Bcrypt(app)
 from werkzeug.utils import secure_filename
@@ -24,12 +29,20 @@ def registro():
 
 
 # Template Dashboard
-@app.route('/dashboard')
+@app.route('/dashboard', methods=['POST'])
 def dashboard():
     if 'user_id' not in session:
         return redirect('/')
-
-    return render_template('dashboard.html')
+    formulario = {
+        "id": session['user_id']
+    }
+    city = { "city" : request.form["city"] }
+    type_service = { "type_service" : request.form["type_service"] }
+    services = Service.get_all()
+    filter_city = Service.filter_services_by_city(city)
+    filter_type = Service.filter_services_by_type_services(type_service)
+    user = User.get_by_id(formulario)
+    return render_template('dashboard.html', user=user, services=services, filter_city=filter_city, filter_type=filter_type)
 
 
 
@@ -74,7 +87,7 @@ def register():
         "image": nombre_imagen
     }
     
-    id = User.save(data)
+    id = User.save_user(data)
 
     session['user_id'] = id
     return redirect('/dashboard')
