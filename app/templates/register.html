@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/normalize.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/reset.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/bases.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/register/register.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/footer.css') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title> Register | Swappers</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'imgs/favicon.ico') }}">
+</head>
+<body>
+    <main>
+        <section class="login">
+            <div class="login_box">
+                <div class="left">
+                    <div class="top_link"><a href="/"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="">Return home</a></div>
+                    <div class="contact">
+                        <form action="/register_new_user" method="post" id="formRegister">
+                            <h3>REGISTER</h3>
+                            <input type="text" name="first_name" id="first_name" placeholder="First Name" class="form-control">
+                            <input type="text" name="last_name" id="last_name" placeholder="Last Name" class="form-control">
+                            <input type="text" name="name" id="name" placeholder="Ingrese su Nombre" class="form-control container__register_name">
+                            <input type="text" name="name" id="name" placeholder="Ingrese su Nombre" class="form-control container__register_name">
+                            <input type="text" name="name" id="name" placeholder="Ingrese su Nombre" class="form-control container__register_name">
+                            <input type="text" name="name" id="name" placeholder="Ingrese su Nombre" class="form-control container__register_name">
+                            <button class="submit">LET'S GO</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="right-text">
+                        <h2>LOGO</h2>
+                        <h5>A great company to work with!</h5>
+                    </div>
+                    <div class="right-inductor"><img src="" alt=""></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="rodapePrincipal">
+        <div class="container">
+            <section class="rodapePrincipal-navMap">
+                <h3 class="subtitulo ms-5 fs-5">Site Map</h3>
+                <hr class="line__footer_separator">
+                <nav class="rodapePrincipal-navMap-list d-flex flex-row justify-content-around">
+                    <div class="d-flex flex-column">
+                        <h4 class="navmap-list-title navmap-list-title-backend">Swappers</h4>
+                        <a class="rodapePrincipal-navMap-link" href="#">Experiences</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Professional services</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Business</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Houses</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Tickets and events</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Hobbies</a>
+                    </div>
+                    
+                    <div class="d-flex flex-column">
+                        <h4 class="navmap-list-title navmap-list-title-frontend">Company</h4>
+                        <a class="rodapePrincipal-navMap-link" href="#">About us</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Confidence</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Jobs</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Discover Swappers</a>
+                    </div>
+
+                    <div class="d-flex flex-column">
+                        <h4 class="navmap-list-title navmap-list-title-framework">Media</h4>
+                        <a class="rodapePrincipal-navMap-link" href="#">Blog</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Press</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Facebook</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Instagram</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Youtube</a>
+                    </div>
+
+                    <div class="d-flex flex-column">
+                        <h4 class="navmap-list-title navmap-list-title-bancoDeDados">Help & Support</h4>
+                        <a class="rodapePrincipal-navMap-link" href="#">How does it work?</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">FAQ</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Contact us</a>
+                    </div>
+                </nav>
+            </section>
+        </div>
+        <section class="rodapePrincipal-patrocinadores footer bg-white">
+            <div class="container d-flex flex-row justify-content-between align-items-center">
+                <ul class="rodapePrincipal-patrocinadores-list">
+                    <li>
+                        <a class="rodapePrincipal-patrocinadores-list-link patrocinadores-list-link-alura" href="#">
+                            <img src="{{ url_for('static', filename = 'imgs/logo.jpeg') }}" alt="Logo swappers">
+                        </a>
+                    </li>
+                </ul>
+                <form class="rodapePrincipal-contatoForm" action="#">
+                    <fieldset>
+                        <legend class="rodapePrincipal-contatoForm-legend label fs-5 ms-3" for="email-contato">get in touch
+                        </legend>
+                        <div class="rodapePrincipal-contatoForm-fieldset">
+                            <input class="rodapePrincipal-contatoForm-emailInput" type="email" name="email-contato"
+                                id="email-contato">
+                            <button class="rodapePrincipal-contatoForm-submit btn btn-success" type="submit">Send</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.3.js"
+        integrity="sha256-goy7ystDD5xbXSf+kwL4eV6zOPJCEBD1FBiCElIm+U8=" crossorigin="anonymous" type="text/javascript">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

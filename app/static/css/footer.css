@@ -1,7 +1,12 @@
-
 .rodapePrincipal {
 	background-color: #324C64;
 	padding-top: 20px;
+	font-family: var(--Mulish);
+}
+
+.line__footer_separator {
+	background-color: var(--background-logo);
+	border-top: 3px solid var(--background-logo);
 }
 
 .rodapePrincipal .subtitulo {
