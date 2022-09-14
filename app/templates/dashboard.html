@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Swapper</title>
+    <link rel="stylesheet"type="text/css" href="{{url_for('static', filename='./css/dashboard.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Alumni+Sans+Pinstripe:ital@1&family=Montserrat:wght@200;400&family=Mukta&family=Nunito:wght@300&family=Roboto:wght@300&family=Signika+Negative:wght@700&family=Spectral:ital,wght@1,200&family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+
+            <div class="navbar">
+                <img src="../static/images/logo ajuste.jpeg" alt="logo" class="logo">
+                
+                <div class="inner-addon right-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                    <input type="text" class="form-control" placeholder="The best experiences...." />
+                </div>
+                    <li>
+                        <a href="/mismatchs">My Matches</a>
+                    </li>
+                    
+                    
+                    <a href="/inicio"><img onclick="alerta()" src="{{url_for('static', filename='images/login.png')}}" alt="logeo" class="imgnav"/></a>
+                </input>
+            </div>
+        </header>
+      
+        <main>
+            <!-- Formulario con filtros de busqueda -->
+            <div class="filtros">
+                <div class="subfliltros">
+                    <li>
+                        <a href="/usuarios" class="subt">Location</a>  <!-- Show the number of users in chosen location -->
+                        <select name="location" id="location" class="form-control">
+                            <option value="" selected="selected"><b>--Choose--</b></option>
+                            <option class="select">Barranquilla</option>
+                            <option class="select">Bogotá DC</option>
+                            <option class="select">Bucaramanga</option>
+                            <option class="select">Manizales</option>
+                            <option class="select">Medellín</option>
+                        </select>
+                    </li> 
+                </div>
+               <div class="subfliltros">
+                    <li>
+                        <a href="#" class="subt">What to do?</a>
+                        <select name="activity" id="activity" class="form-control">
+                            <option value="" selected="selected"><b>--Let's Fun--</b></option>
+                            <option class="select">Business</option>
+                            <option class="select">Professional Services</option>
+                            <option class="select">Sports</option>
+                            <option class="select">Tickets and Events</option>
+                        </select>
+                    </li>
+               </div>
+               <div class="subfliltros">
+                    <li>
+                        <a><label for="date_made">Let's go</label></a>
+                        <input type="date" id="date_activity" name="date_activity" class="form-control">
+                    </li>
+               </div>  
+            </div>
+
+            <h3>LET'S DISCOVER WITH US!</h3>
+            <div class="mostrar_contenido">
+                <div class="row">
+                    <div class="col-6">
+                        {% if filter_city != Null %}
+
+                        {% for service in filter_city %}
+                            <div class="card-deck">
+                                <div class="card">
+                                    
+                                    <div class="card-body">
+                                    <h5 class="card-title">{service.name}}</h5>
+                                    <p class="card-text">{service.description}</p>
+                                    {% if service.type_service == 1%}
+                                    Dancing
+                                    {% endif %}
+                                    {% if service.type_service == 2%}
+                                    Photography
+                                    {% endif %}
+                                    {% if service.type_service == 3%}
+                                    Sports
+                                    {% endif %}
+                                    {% if service.type_service == 4%}
+                                    Arts
+                                    {% endif %}
+                                    {% if service.type_service == 5%}
+                                    Cooking
+                                    {% endif %}
+                                    {% if service.type_service == 6%}
+                                    Teaching
+                                    {% endif %}
+                                    {% if service.type_service == 7%}
+                                    Music
+                                    {% endif %}
+                                    {% if service.type_service == 8%}
+                                    Coding
+                                    {% endif %}
+                                    {% if service.type_service == 9%}
+                                    Others
+                                    {% endif %}
+                                </div>
+                                    <div class="card-footer">
+                                        <small class="text-muted">Posted in {{created_at}}</small>
+                                        <small class="text-muted">Posted by: {{service.first_name}}</small>
+                                </div>
+                            </div>      
+                        {% endfor %}
+                        {% endif %}
+        
+                        {% if filter_type != Null %}
+        
+                        {% for service in filter_type %}
+                          
+                            <div class="card-deck">
+                                <div class="card">
+                                    
+                                    <div class="card-body">
+                                    <h5 class="card-title">{service.name}}</h5>
+                                    <p class="card-text">{service.description}</p>
+                                    {% if service.type_service == 1%}
+                                    Dancing
+                                    {% endif %}
+                                    {% if service.type_service == 2%}
+                                    Photography
+                                    {% endif %}
+                                    {% if service.type_service == 3%}
+                                    Sports
+                                    {% endif %}
+                                    {% if service.type_service == 4%}
+                                    Arts
+                                    {% endif %}
+                                    {% if service.type_service == 5%}
+                                    Cooking
+                                    {% endif %}
+                                    {% if service.type_service == 6%}
+                                    Teaching
+                                    {% endif %}
+                                    {% if service.type_service == 7%}
+                                    Music
+                                    {% endif %}
+                                    {% if service.type_service == 8%}
+                                    Coding
+                                    {% endif %}
+                                    {% if service.type_service == 9%}
+                                    Others
+                                    {% endif %}
+                                </div>
+                                    <div class="card-footer">
+                                    <small class="text-muted">Posted in {{created_at}}</small>
+                                    <small class="text-muted">Posted by: {{service.first_name}}</small>
+                                </div>
+                            </div>      
+                        {% endfor %}
+                        {% endif %}
+        
+                        {% for service in all_services %}
+                        
+                            <div class="card-deck">
+                                <div class="card">
+                                    
+                                    <div class="card-body">
+                                    <h5 class="card-title">{service.name}}</h5>
+                                    <p class="card-text">{service.description}</p>
+                                    {% if service.type_service == 1%}
+                                    Dancing
+                                    {% endif %}
+                                    {% if service.type_service == 2%}
+                                    Photography
+                                    {% endif %}
+                                    {% if service.type_service == 3%}
+                                    Sports
+                                    {% endif %}
+                                    {% if service.type_service == 4%}
+                                    Arts
+                                    {% endif %}
+                                    {% if service.type_service == 5%}
+                                    Cooking
+                                    {% endif %}
+                                    {% if service.type_service == 6%}
+                                    Teaching
+                                    {% endif %}
+                                    {% if service.type_service == 7%}
+                                    Music
+                                    {% endif %}
+                                    {% if service.type_service == 8%}
+                                    Coding
+                                    {% endif %}
+                                    {% if service.type_service == 9%}
+                                    Others
+                                    {% endif %}
+                                </div>
+                                    <small class="text-muted">Posted in {{created_at}}</small>
+                                    <small class="text-muted">Posted by: {{service.first_name}}</small>
+                                </div>
+                            </div>      
+                        {% endfor %}        
+
+                    </div>
+
+                </div>
+
+                <div class="col-6">
+                    <div class="row1">
+                        <img src="../static/images/comida.jpg" alt="pinterest" class="foto">
+                        <img src="../static/images/baile.jpg" alt="pinterest" class="foto">
+                        <img src="../static/images/viaje.jpg" alt="pinterest" class="foto">
+                    </div>
+                    <div class="row1">
+                        <img src="../static/images/clases.jpg" alt="pinterest" class="foto">
+                        <img src="../static/images/paseoperro.jpg" alt="pinterest" class="foto">
+                        <img src="../static/images/cocinero.jpg" alt="pinterest" class="foto">
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <footer>
+                <li>
+                    <a href="#" class="footer_tit">Comunnity</a>
+                    <b>------------------------</b>
+                    <b>Experiences</b>
+                    <b>Testimonials</b>
+                    <b>Our team</b>
+                    <b>Work with us!</b>   
+                </li>
+                <li>
+                    <a href="#" class="footer_tit">Legal Terms</a>
+                    <b>------------------------</b>
+                    <b>Privacy Policy</b>
+                    <b>Treatment of personal data</b>
+                </li>
+                <li>
+                    <a href="#" class="footer_tit">Contact us</a>
+                    <b>------------------------</b>
+                    <b>Our offices</b>
+                    <b>Contact us: supportclient@swapper.com</b>
+
+                </li>
+                <li>
+                    <a href="#" class="footer_tit">Follow us</a>
+                    <b>------------------------</b>
+                    <a href="#"><img src="../static/images/ig.png" alt="pinterest" class="redsocial"></a>
+                    <a href="#"><img src="../static/images/facebook.png" alt="pinterest" class="redsocial"></a>
+                    
+                </li>
+            </footer>
+                 
+        </main>
+</body>
+</html>
