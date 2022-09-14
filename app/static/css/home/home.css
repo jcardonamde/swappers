@@ -2,37 +2,26 @@ body {
     background-color: var(--background-logo);
 }
 
-
-/*parte 1*/
+/*Section User Comments*/
 .users_experiences {
-    text-align: center;
     padding: 5rem;
 }
 
-/*parte 2*/
 .quienes-somos__titulo {
-    color: var(--text-content1);
-    margin-bottom: 1rem;
+    color: var(--text-content5);
     font-family: Pacifico, cursive;
     font-size: 3.1875rem;
+    margin-bottom: 1rem;
 }
 
 .quienes-somos__descripcion {
-    color: #595959;
+    color: var(--text-content7);
     font-size: 1.75rem;
     font-weight: 100;
 }
 
-/*parte 3*/
 .personas {
-    display: flex;
-    justify-content: space-around;
     padding-top: 3rem;
-}
-
-.persona {
-    display: flex;
-    flex-direction: column;
 }
 
 .persona__imagen {
@@ -55,8 +44,8 @@ body {
     background-size: cover;
 }
 
-.persona__imagen--andrea {
-    background: url('/static/imgs/people/andrea.jpg');
+.persona__imagen--julian {
+    background: url('/static/imgs/people/julian.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -70,8 +59,13 @@ body {
     margin: 1rem 0;
 }
 
+.persona__comentario {
+    font-size: 1.50rem;
+    width: 300px;
+}
+
 .persona__funcion {
-    color: #595959;
+    color: var(--text-content7);
     font-size: 1.25rem;
     text-transform: lowercase;
 }

@@ -1,15 +1,12 @@
 console.log("page loaded...");
 date_service.min = new Date().toISOString().split("T")[0];
 
-// function playVideo(element)  {
-//     element.play();
-//     document.getElementById("video-header").muted = false;
-//     console.log("Se reproduce");
-// }
+const questions = document.querySelectorAll(".question");
 
-// function pauseVideo(element)  {
-//     element.pause();
-//     document.getElementById("video-header").muted = true;
-//     console.log("Se Detiene");
-// }
-//onmouseover="playVideo(this)" onmouseleave="pauseVideo(this)"
+questions.forEach(function (question) {
+    const btn = question.querySelector(".question-btn");
+
+    btn.addEventListener("click", function () {
+        question.classList.toggle("show-text");
+    });
+});

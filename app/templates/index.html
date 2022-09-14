@@ -13,11 +13,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/home/video_header.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/home/home.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/home/card_services.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/home/faq.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/footer.css') }}" />
     <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Experiences that connect | Swappers</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename = 'imgs/favicon.ico') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
@@ -32,32 +34,31 @@
                     <a href="#explore_services" class="nav-link fw-bold me-2 nav__bar_links_option">Community</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/login" class="nav-link fw-bold me-2 nav__bar_links_option">Login</a>
+                    <a href="/inicio_sesion" class="nav-link fw-bold me-2 nav__bar_links_option">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/register" class="btn btn-outline-success btn-md fw-bold ms-1 me-3 nav__bar_links_active" style="width: 120px;">Register</a>
+                    <a href="/registro" class="btn btn-outline-success btn-md fw-bold ms-1 me-3 nav__bar_links_active" style="width: 120px;">Register</a>
                 </li>
             </ul>
         </nav>
-        <figure class="container__video_call-action">
+        <figure class="position-relative mb-0">
             <video class="background__video_home" autoplay loop muted src="/static/videos/timelapse_home.mp4"
                 type="video/mp4" id="video-header">
             </video>
-            <div class="container bg-transparent call__action_header">
+            <div class="container bg-transparent position-absolute top-50 start-50 translate-middle" style="height: 500px;">
                 <div class="container bg-transparent call__action_description">
-                    <div class="call__action_description_pt1 align-items-center justify-content-center">
-                        <h1 class="text-center text-white mb-4">Exchange services <br> instead of buying them</h1>
+                    <div class="d-flex flex-row align-items-center justify-content-center">
+                        <h1 class="text-center text-white fw-bold mb-4">Exchange services <br> instead of buying them</h1>
                         <button></button>
                     </div>
-                    <h2 class="text-center text-white">in your city or remotely, you can find a great community <br>
+                    <h2 class="text-center text-white fw-900">in your city or remotely, you can find a great community <br>
                         Publish your ad and you can change your services <br> for what interests you, other services or
                         other things.</h2>
                 </div>
-                <div
-                    class="container d-flex flex-row justify-content-evenly bg-white text-dark align-items-center mt-4 call__action_searchs">
-                    <div>
-                        <label for="service_city" class="service_city_label">Where are you?</label>
-                        <select class="form-select service_city_select" id="service_city" name="service_city">
+                <div class="container d-flex flex-row justify-content-evenly bg-white text-dark align-items-center mt-4 call__action_searchs">
+                    <div class="form-group">
+                        <label for="city" class="fw-bold fs-5 mb-2">Where are you?</label>
+                        <select class="form-select fs-5" style="width: 320px;" id="city" name="city">
                             <option selected>Select an option</option>
                             <option value="1">Bogota</option>
                             <option value="2">Medellin</option>
@@ -67,9 +68,9 @@
                             <option value="6">Remote</option>
                         </select>
                     </div>
-                    <div>
-                        <label for="type_service" class="type_service_label">What are you looking for?</label>
-                        <select class="form-select type_service_select" id="type_service" name="type_service">
+                    <div class="form-group">
+                        <label for="type_service" class="fw-bold fs-5 mb-2">What are you looking for?</label>
+                        <select class="form-select fs-5" style="width: 320px;" id="type_service" name="type_service">
                             <option selected>Select a service</option>
                             <option value="1">Dance classes</option>
                             <option value="2">Repairs</option>
@@ -79,14 +80,14 @@
                             <option value="6">Others</option>
                         </select>
                     </div>
-                    <div>
-                        <label for="date_service" class="date_service_label">When you need it?</label>
-                        <input type="date" class="form-control date_service_select" id="date_service"
+                    <div class="form-group">
+                        <label for="date_service" class="fw-bold fs-5 mb-2">When you need it?</label>
+                        <input type="date" class="form-control fs-5" style="width: 320px;" id="date_service"
                             name="date_service">
                     </div>
-                    <div>
+                    <div class="form-group">
                         <button type="button"
-                            class="btn btn-outline-info p-1 rounded-pill search_service-button">Search</button>
+                            class="btn btn-outline-info p-1 rounded-pill fw-bold fs-5 search_service-button">Search</button>
                     </div>
                 </div>
             </div>
@@ -244,7 +245,7 @@
                 </div>
             </div>
         </section>
-        <section class="container d-flex flex-row justify-content-around mt-3">
+        <section class="container d-flex flex-row justify-content-around mt-3 mb-5">
             <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
                 <div class="card-header d-flex flex-row align-items-center header__card_services">
                     <img src="{{ url_for('static', filename = 'imgs/icons/mobiles_tablets.png') }}"
@@ -336,24 +337,102 @@
                 </div>
             </div>
         </section>
-        <section class="users_experiences">
+        <section class="bg-white p-3 section-questions" name="faq" id="faq">
+            <h1 class="text-center fw-bold mt-5 section-questions-title">We invite you to learn a little more about our service</h1>
+            <div class="section-center">
+                <article class="question">
+                    <div class="d-flex justify-content-between align-items-center text-capitalize question-title">
+                        <p class="fw-bold text-capitalize question__title_p">how swapper works?</p>
+                        <button class="bg-transparent question-btn">
+                            <span class="plus-icon"><i class="fa-solid fa-circle-plus"></i></span>
+                            <span class="minus-icon"><i class="fa-solid fa-circle-minus"></i></span>
+                        </button>
+                    </div>
+                    <div class="question-text">
+                        <p class="question__text_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cumque unde cum, distinctio perferendis possimus! Vero quis tempore molestias veniam impedit magnam voluptas distinctio maiores ducimus? Quo omnis a dicta?</p>
+                    </div>
+                </article>
+            </div>
+            <div class="section-center">
+                <article class="question">
+                    <div class="d-flex justify-content-between align-items-center text-capitalize question-title">
+                        <p class="fw-bold text-capitalize question__title_p">What do I need to start using Swappers?</p>
+                        <button class="bg-transparent question-btn">
+                            <span class="plus-icon"><i class="fa-solid fa-circle-plus"></i></span>
+                            <span class="minus-icon"><i class="fa-solid fa-circle-minus"></i></span>
+                        </button>
+                    </div>
+                    <div class="question-text">
+                        <p class="question__text_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cumque unde cum, distinctio perferendis possimus! Vero quis tempore molestias veniam impedit magnam voluptas distinctio maiores ducimus? Quo omnis a dicta?</p>
+                    </div>
+                </article>
+            </div>
+            <div class="section-center">
+                <article class="question">
+                    <div class="d-flex justify-content-between align-items-center text-capitalize question-title">
+                        <p class="fw-bold text-capitalize question__title_p">is it safe to use swappers?</p>
+                        <button class="bg-transparent question-btn">
+                            <span class="plus-icon"><i class="fa-solid fa-circle-plus"></i></span>
+                            <span class="minus-icon"><i class="fa-solid fa-circle-minus"></i></span>
+                        </button>
+                    </div>
+                    <div class="question-text">
+                        <p class="question__text_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cumque unde cum, distinctio perferendis possimus! Vero quis tempore molestias veniam impedit magnam voluptas distinctio maiores ducimus? Quo omnis a dicta?</p>
+                    </div>
+                </article>
+            </div>
+            <div class="section-center">
+                <article class="question">
+                    <div class="d-flex justify-content-between align-items-center text-capitalize question-title">
+                        <p class="fw-bold text-capitalize question__title_p">why swappers is the best option to exchange services or products?</p>
+                        <button class="bg-transparent question-btn">
+                            <span class="plus-icon"><i class="fa-solid fa-circle-plus"></i></span>
+                            <span class="minus-icon"><i class="fa-solid fa-circle-minus"></i></span>
+                        </button>
+                    </div>
+                    <div class="question-text">
+                        <p class="question__text_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cumque unde cum, distinctio perferendis possimus! Vero quis tempore molestias veniam impedit magnam voluptas distinctio maiores ducimus? Quo omnis a dicta?</p>
+                    </div>
+                </article>
+            </div>
+            <div class="section-center">
+                <article class="question">
+                    <div class="d-flex justify-content-between align-items-center text-capitalize question-title">
+                        <p class="fw-bold text-capitalize question__title_p">where can I contact support?</p>
+                        <button class="bg-transparent question-btn">
+                            <span class="plus-icon"><i class="fa-solid fa-circle-plus"></i></span>
+                            <span class="minus-icon"><i class="fa-solid fa-circle-minus"></i></span>
+                        </button>
+                    </div>
+                    <div class="question-text">
+                        <p class="question__text_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cumque unde cum, distinctio perferendis possimus! Vero quis tempore molestias veniam impedit magnam voluptas distinctio maiores ducimus? Quo omnis a dicta?</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="text-center users_experiences" name="experiences" id="experiences">
             <h3 class="quienes-somos__titulo">¿You're looking for something new?</h3>
-            <p class="quienes-somos__descripcion">Hundreds of users have already lived the swappers experience</p>
-            <div class="personas">
-                <div class="persona">
+            <p class="mb-3 quienes-somos__descripcion">Hundreds of users have already lived the swappers experience</p>
+            <div class="d-flex justify-content-around personas">
+                <div class="d-flex flex-column">
                     <div class="persona__imagen persona__imagen--roberta"></div>
                     <span class="persona__nombre">Roberta</span>
-                    <span class="persona__funcion">Contenido</span>
+                    <span class="persona__comentario">This platform has allowed me to connect with more people
+                        They are looking for you to evaluate their products or services. I have been impressed
+                        the great human and professional quality of these swappers.</span>
+                    <span class="mt-4 persona__funcion">Content creator</span>
                 </div>
-                <div class="persona">
+                <div class="d-flex flex-column">
                     <div class="persona__imagen persona__imagen--marcela"></div>
                     <span class="persona__nombre">Marcela</span>
-                    <span class="persona__funcion">Chef de cocina</span>
+                    <span class="persona__comentario">I can sometimes trade tools and recipes with other trader. My network of professional contacts has been growing and when I need something that I don't know how to do, I just look for someone who matches.</span>
+                    <span class="mt-4 persona__funcion">Chef</span>
                 </div>
-                <div class="persona">
-                    <div class="persona__imagen persona__imagen--andrea"></div>
-                    <span class="persona__nombre">Andrea</span>
-                    <span class="persona__funcion">Pequeña Productora</span>
+                <div class="d-flex flex-column">
+                    <div class="persona__imagen persona__imagen--julian"></div>
+                    <span class="persona__nombre">Julian</span>
+                    <span class="persona__comentario">Redeeming my things that no longer serve me and that others in the community can be of great use to is a great plus. Swappers is my first option in terms of security, trust and services with committed people.</span>
+                    <span class="mt-4 persona__funcion">Small producer</span>
                 </div>
             </div>
         </section>
@@ -366,22 +445,20 @@
                 <nav class="rodapePrincipal-navMap-list d-flex flex-row justify-content-around">
                     <div class="d-flex flex-column">
                         <h4 class="navmap-list-title navmap-list-title-backend">Swappers</h4>
-                        <a class="rodapePrincipal-navMap-link" href="#">Experiences</a>
-                        <a class="rodapePrincipal-navMap-link" href="#">Professional services</a>
-                        <a class="rodapePrincipal-navMap-link" href="#">Business</a>
-                        <a class="rodapePrincipal-navMap-link" href="#">Houses</a>
-                        <a class="rodapePrincipal-navMap-link" href="#">Tickets and events</a>
-                        <a class="rodapePrincipal-navMap-link" href="#">Hobbies</a>
+                        <a class="rodapePrincipal-navMap-link" href="#experiences">Experiences</a>
+                        <a class="rodapePrincipal-navMap-link" href="#explore_services">Professional services</a>
+                        <a class="rodapePrincipal-navMap-link" href="#explore_services">Business</a>
+                        <a class="rodapePrincipal-navMap-link" href="#explore_services">Houses</a>
+                        <a class="rodapePrincipal-navMap-link" href="#explore_services">Tickets and events</a>
+                        <a class="rodapePrincipal-navMap-link" href="#explore_services">Hobbies</a>
                     </div>
-                    
                     <div class="d-flex flex-column">
                         <h4 class="navmap-list-title navmap-list-title-frontend">Company</h4>
-                        <a class="rodapePrincipal-navMap-link" href="#">About us</a>
+                        <a class="rodapePrincipal-navMap-link" href="#faq">About us</a>
                         <a class="rodapePrincipal-navMap-link" href="#">Confidence</a>
                         <a class="rodapePrincipal-navMap-link" href="#">Jobs</a>
                         <a class="rodapePrincipal-navMap-link" href="#">Discover Swappers</a>
                     </div>
-
                     <div class="d-flex flex-column">
                         <h4 class="navmap-list-title navmap-list-title-framework">Media</h4>
                         <a class="rodapePrincipal-navMap-link" href="#">Blog</a>
@@ -390,12 +467,11 @@
                         <a class="rodapePrincipal-navMap-link" href="#">Instagram</a>
                         <a class="rodapePrincipal-navMap-link" href="#">Youtube</a>
                     </div>
-
                     <div class="d-flex flex-column">
                         <h4 class="navmap-list-title navmap-list-title-bancoDeDados">Help & Support</h4>
-                        <a class="rodapePrincipal-navMap-link" href="#">How does it work?</a>
-                        <a class="rodapePrincipal-navMap-link" href="#">FAQ</a>
-                        <a class="rodapePrincipal-navMap-link" href="#">Contact us</a>
+                        <a class="rodapePrincipal-navMap-link" href="#faq">How does it work?</a>
+                        <a class="rodapePrincipal-navMap-link" href="#faq">FAQ</a>
+                        <a class="rodapePrincipal-navMap-link" href="#faq">Contact us</a>
                     </div>
                 </nav>
             </section>

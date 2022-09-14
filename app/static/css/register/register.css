@@ -16,19 +16,16 @@ img {
     width: 100%;
 }
 
-.login_box {
+.register_box {
     background: #fff;
     border-radius: 10px;
     box-shadow: 1px 4px 22px -8px #0004;
     margin-top: 5rem;
     overflow: hidden;
-    position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.login_box .container__register_left {
+.register_box .container__register_left {
     height: 100%;
     padding: 25px 25px;
     width: 60%;
@@ -38,7 +35,7 @@ img {
     background: linear-gradient(-45deg, #dcd7e0, #fff);
 }
 
-.login_box .container__register_right {
+.register_box .container__register_right {
     height: 100%;
     width: 59%;
 }

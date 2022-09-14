@@ -4,7 +4,11 @@
     --background-content: #95e0e3;
     --background-header: #FFFFFF;
     --background-cards: #98c1d9;
+    --background-faq-stories: #FFFFFF;
+    --background-content-faq-stories: #324C64;
+    --background-footer-main: #324C64;
     --background-footer: #95e0e3;
+    --background-404: #181828;
 
     /* Color secundario */
     --text-content1: #7ad1e3;
@@ -12,26 +16,21 @@
     --text-content3: #9ed4de;
     --text-content4: #95e0e3;
     --text-content5: #FFFFFF;
+    --text-content6: #9ACD32;
+    --text-content7: #595959;
     --text-content-forms: #452A5A;
     --border-input-forms:#4f30677d;
     --text-content-gifs: #0B5ED7;
     --text-links-nav: #000000;
     --text-content-hover1: #FFFFFF;
-
-    
-    /*Sin aplicar*/
-    --background-main: #E5E5E5;
-    --background-404: #138FF2;
-    /*background: #f2eee3;*/
-    /*Sin aplicar*/
-    --background-hover-button: #FFC300;
-    --text-search-bar: #F5F5F5;
-    
-    --text-content-hover3: #DC3545;
     
     /*Fuentes proyecto*/ 
     --Questrial: 'Questrial', sans-serif; /*Fuente de Marca */
     --Mulish: 'Mulish', sans-serif; /*Fuente contenidos globales*/
+
+
+    /*Sin aplicar*/
+    /*background: #f2eee3;*/
 }
 
 * {

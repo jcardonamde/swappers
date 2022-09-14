@@ -7,23 +7,7 @@ body {
     height: 100vh;
     object-fit: cover;
     width: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
     z-index: -1;
-}
-
-.container__video_call-action {
-    position: relative;
-    margin-bottom: 0px;
-}
-
-.call__action_header {
-    height: 500px;
-    margin: 30px;
-    position: absolute;
-    bottom: 120px;
-    left: 55px;
 }
 
 .call__action_description {
@@ -31,51 +15,29 @@ body {
     padding: 20px;
 }
 
-.call__action_description_pt1 {
-    display: flex;
-    flex-direction: row;
-}
-
 .call__action_description h1 {
     font-family: var(--Mulish);
     font-size: 68px;
-    font-weight: 900;
+}
+
+.call__action_description h2 {
+    font-family: var(--Mulish);
+    font-size: 32px;
 }
 
 .call__action_description button {
     background-color: var(--text-content2);
-    border-radius: 50px;
-    cursor: none;
     height: 18px;
     margin-left: 1px;
     margin-top: 93px;
     width: 18px;
 }
 
-.call__action_description h2 {
-    font-family: var(--Mulish);
-    font-size: 32px;
-    font-weight: 700;
-}
-
 .call__action_searchs {
     height: 108px;
 }
 
-.service_city_label, .type_service_label, .date_service_label {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.service_city_select, .type_service_select, .date_service_select {
-    font-size: 17px;
-    width: 320px;
-}
-
 .search_service-button {
-    font-size: 17px;
-    font-weight: bold;
     height: 47px;
     margin-top: 30px;
     width: 160px;

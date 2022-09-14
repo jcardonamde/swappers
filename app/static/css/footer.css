@@ -1,7 +1,7 @@
 .rodapePrincipal {
-	background-color: #324C64;
-	padding-top: 20px;
+	background-color: var(--background-footer-main);
 	font-family: var(--Mulish);
+	padding-top: 20px;
 }
 
 .line__footer_separator {

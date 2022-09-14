@@ -18,8 +18,8 @@
 </head>
 <body>
     <main> 
-        <section class="container container__register">
-            <div class="d-flex login_box" style="height: 750px; width: 1050px;">
+        <section class="container mb-5 container__register">
+            <div class="d-flex position-absolute top-50 start-50 translate-middle register_box" style="height: 750px; width: 1050px;">
                 <div class="container__register_left">
                     <div class="d-flex align-items-center top_link" style="height: 20px;">
                         <a href="/" class="d-flex align-items-center fw-400 fs-6">
@@ -27,7 +27,7 @@
                         </a>
                     </div>
                     <div class="container mt-1 d-flex justify-content-center align-items-center form__register">
-                        <form action="/register_new_user" method="post" id="formRegister">
+                        <form action="/register" method="post" id="formRegister">
                             <h3 class="fs-4 fw-bold text-center mb-4">REGISTER</h3>
                             <div class="form-group" style="width: 350px;">
                                 <input type="text" name="first_name" id="first_name" placeholder="First Name" class="form-control">
@@ -59,7 +59,7 @@
                                 <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" class="form-control">
                             </div>
                             <div class="form-group">
-                                <textarea rows="4" name="image" id="image" placeholder="Add image URL" class="form-control" style="resize: none;"></textarea>
+                                <input type="file" name="image" id="image" placeholder="Add image URL" class="form-control" style="resize: none;"></textarea>
                             </div>
                             <button type="submit" class="btn btn-outline-success fw-bold mt-4 btn__register">JOIN</button>
                         </form>
@@ -121,18 +121,18 @@
                 <ul class="rodapePrincipal-patrocinadores-list">
                     <li>
                         <a class="rodapePrincipal-patrocinadores-list-link patrocinadores-list-link-alura" href="#">
-                            <img src="{{ url_for('static', filename = 'imgs/logo.jpeg') }}" alt="Logo swappers">
+                            <img src="{{ url_for('static', filename = 'imgs/logo.jpeg') }}" alt="Logo swappers" style="height: 120px;">
                         </a>
                     </li>
                 </ul>
                 <form class="rodapePrincipal-contatoForm" action="#">
-                    <fieldset>
-                        <legend class="rodapePrincipal-contatoForm-legend label fs-5 ms-3" for="email-contato">get in touch
+                    <fieldset class="d-flex flex-row align-items-center">
+                        <legend class="rodapePrincipal-contatoForm-legend label fs-5 fw-700 me-2 mt-2" for="email-contato">Get in touch
                         </legend>
-                        <div class="rodapePrincipal-contatoForm-fieldset">
-                            <input class="rodapePrincipal-contatoForm-emailInput" type="email" name="email-contato"
+                        <div class="rodapePrincipal-contatoForm-fieldset d-flex flex-row align-items-center">
+                            <input class="rodapePrincipal-contatoForm-emailInput rounded" type="email" name="email-contato"
                                 id="email-contato">
-                            <button class="rodapePrincipal-contatoForm-submit btn btn-success" type="submit">Send</button>
+                            <button class="rodapePrincipal-contatoForm-submit btn btn-outline-success fw-800" style="width: 120px; height: 40px;" type="submit">Send</button>
                         </div>
                     </fieldset>
                 </form>
