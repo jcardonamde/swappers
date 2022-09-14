@@ -4,9 +4,505 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/normalize.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/reset.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/bases.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/header.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/home/video_header.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/home/home.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/home/card_services.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/home/faq.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/footer.css') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Experiences that connect | Swappers</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'imgs/favicon.ico') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1>Hola Mundo</h1>
+    <header>
+        <nav class="navbar justify-content-between bg-white p-1" style="height: 120px;">
+            <a class="navbar-brand" href="/">
+                <img src="{{ url_for('static', filename = 'imgs/logo_without_name.jpeg') }}" alt="Logo Swappers"
+                    class="ms-4" style="height: 80px; width: 130px;">
+            </a>
+            <p class="text-uppercase fs-3 fw-bold mt-1 nav__bar_slogan">experiences that connect</p>
+            <ul class="nav nav-pills d-flex align-items-center m-3 fs-5">
+                <li class="nav-item">
+                    <a href="#explore_services" class="nav-link fw-bold me-2 nav__bar_links_option">Community</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/inicio_sesion" class="nav-link fw-bold me-2 nav__bar_links_option">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/registro" class="btn btn-outline-success btn-md fw-bold ms-1 me-3 nav__bar_links_active" style="width: 120px;">Register</a>
+                </li>
+            </ul>
+        </nav>
+        <figure class="position-relative mb-0">
+            <video class="background__video_home" autoplay loop muted src="/static/videos/timelapse_home.mp4"
+                type="video/mp4" id="video-header">
+            </video>
+            <div class="container bg-transparent position-absolute top-50 start-50 translate-middle" style="height: 500px;">
+                <div class="container bg-transparent call__action_description">
+                    <div class="d-flex flex-row align-items-center justify-content-center">
+                        <h1 class="text-center text-white fw-bold mb-4">Exchange services <br> instead of buying them</h1>
+                        <button></button>
+                    </div>
+                    <h2 class="text-center text-white fw-900">in your city or remotely, you can find a great community <br>
+                        Publish your ad and you can change your services <br> for what interests you, other services or
+                        other things.</h2>
+                </div>
+                <div class="container d-flex flex-row justify-content-evenly bg-white text-dark align-items-center mt-4 call__action_searchs">
+                    <div class="form-group">
+                        <label for="city" class="fw-bold fs-5 mb-2">Where are you?</label>
+                        <select class="form-select fs-5" style="width: 320px;" id="city" name="city">
+                            <option selected>Select an option</option>
+                            <option value="1">Bogota</option>
+                            <option value="2">Medellin</option>
+                            <option value="3">Cali</option>
+                            <option value="4">Bucaramanga</option>
+                            <option value="5">Santa Marta</option>
+                            <option value="6">Remote</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="type_service" class="fw-bold fs-5 mb-2">What are you looking for?</label>
+                        <select class="form-select fs-5" style="width: 320px;" id="type_service" name="type_service">
+                            <option selected>Select a service</option>
+                            <option value="1">Dance classes</option>
+                            <option value="2">Repairs</option>
+                            <option value="3">Image consulting</option>
+                            <option value="4">Removals</option>
+                            <option value="5">Practice sports</option>
+                            <option value="6">Others</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date_service" class="fw-bold fs-5 mb-2">When you need it?</label>
+                        <input type="date" class="form-control fs-5" style="width: 320px;" id="date_service"
+                            name="date_service">
+                    </div>
+                    <div class="form-group">
+                        <button type="button"
+                            class="btn btn-outline-info p-1 rounded-pill fw-bold fs-5 search_service-button">Search</button>
+                    </div>
+                </div>
+            </div>
+        </figure>
+    </header>
+    <main class="section__main_card_services">
+        <h1 class="text-center mt-5 main__title_card_services" name="explore_services" id="explore_services">Explore the
+            world of Swappers</h1>
+        <section class="container d-flex flex-row justify-content-around section__card_services">
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/hands.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 fw-bold">Professional services</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm mb-1">Languages</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">Web design</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Video and photography</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Workforce</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Hostelry</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Accounting</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Other services</a>
+
+                </div>
+            </div>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/business.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">business</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">machinery</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">furniture</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">products and stocks</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">transfers</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">raw material</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">accounting</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">recommendations</a>
+
+                </div>
+            </div>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/sports.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">sports</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">bikes</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">fitness</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">soccer</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Gym</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">boxing</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">running</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">tennis</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">diving</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">climbing</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">basketball</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">skates</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">others sports</a>
+                </div>
+            </div>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/tickets.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">tickets and events</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">art, theater and musicals</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">concerts and festivals</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">sports events</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">book Fair</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">cinema</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">trainings</a>
+                </div>
+            </div>
+        </section>
+        <section class="container d-flex flex-row justify-content-around mt-3">
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/vehicule.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">vehicles and cars</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">car accessories</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">caravans</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">classic cars</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">motorcycles</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">hybrids</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">vans</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">SUVs</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">scooters</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">spare parts and tools</a>
+                </div>
+            </div>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/houses.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">houses</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">decor</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">home appliances</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">tools</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">furniture</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">accessories</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">home care</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">space design</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">paintings</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">electric</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">security</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">various services</a>
+                </div>
+            </div>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/img_sounds.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">Image and sound</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">speakers</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">headphones</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">camera</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">video-cameras</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">sports camera</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">mixing table</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">televisions</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">projectors</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">theater at home</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">other similar</a>
+                </div>
+            </div>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/antiques.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">art and antiques</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">paintings</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">sculptures</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">antique furniture</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">antique objects</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">books</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">comics</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">musical instruments</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">collectibles</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">weird things</a>
+                </div>
+            </div>
+        </section>
+        <section class="container d-flex flex-row justify-content-around mt-3 mb-5">
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/mobiles_tablets.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">mobiles and tablets</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">blackberry</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">bq</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">HTC</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">huawei</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">iPhone</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">LG</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">nokia</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">alcatel</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">z-teck</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">android generic</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Surface duo</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Motorola</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Samsung</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Sony</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">iPad</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">lenovo</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">other brands</a>
+                </div>
+            </div>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/mobiles_tablets.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">video games</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Computer games</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">games consoles</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">old consoles</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">retro games</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">nintendo 3DS - DS</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">PSP - PS Vita</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">playstation</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Xbox</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">recreational</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Wii - Wii U</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">playstation 5</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">other consoles</a>
+                </div>
+            </div>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/fashion.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">fashion</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">imitation jewelry</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">handbags</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">footwear</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">cosmetics</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">Sunglasses</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">caps</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">jewels</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">perfumes</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">clocks</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">rings</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">sweaters</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">new collections</a>
+                </div>
+            </div>
+            <div class="card text-bg-primary mb-3 rounded-top" style="max-width: 18rem;">
+                <div class="card-header d-flex flex-row align-items-center header__card_services">
+                    <img src="{{ url_for('static', filename = 'imgs/icons/hobbies.png') }}"
+                        alt="logo Professional services" class="img__card_services">
+                    <div class="text-uppercase fs-5 ms-2 mt-2 fw-bold">hobbies</div>
+                </div>
+                <div class="card-body d-flex flex-wrap text-capitalize text-center fw-bold contents__card_services">
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">aquariums</a>
+                    <a href="#" class="btn btn btn-outline-dark btn-sm ms-1 mb-1">airsoft</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">camping</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">drones</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">hunting and fishing</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">radio amateurs</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">telescopes</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">military items</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">miniatures</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">bows</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">compressed air</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">paintball</a>
+                    <a href="#" class="btn btn-outline-dark btn-sm ms-1 mb-1">other hobbies</a>
+                </div>
+            </div>
+        </section>
+        <section class="bg-white p-3 section-questions" name="faq" id="faq">
+            <h1 class="text-center fw-bold mt-5 section-questions-title">We invite you to learn a little more about our service</h1>
+            <div class="section-center">
+                <article class="question">
+                    <div class="d-flex justify-content-between align-items-center text-capitalize question-title">
+                        <p class="fw-bold text-capitalize question__title_p">how swapper works?</p>
+                        <button class="bg-transparent question-btn">
+                            <span class="plus-icon"><i class="fa-solid fa-circle-plus"></i></span>
+                            <span class="minus-icon"><i class="fa-solid fa-circle-minus"></i></span>
+                        </button>
+                    </div>
+                    <div class="question-text">
+                        <p class="question__text_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cumque unde cum, distinctio perferendis possimus! Vero quis tempore molestias veniam impedit magnam voluptas distinctio maiores ducimus? Quo omnis a dicta?</p>
+                    </div>
+                </article>
+            </div>
+            <div class="section-center">
+                <article class="question">
+                    <div class="d-flex justify-content-between align-items-center text-capitalize question-title">
+                        <p class="fw-bold text-capitalize question__title_p">What do I need to start using Swappers?</p>
+                        <button class="bg-transparent question-btn">
+                            <span class="plus-icon"><i class="fa-solid fa-circle-plus"></i></span>
+                            <span class="minus-icon"><i class="fa-solid fa-circle-minus"></i></span>
+                        </button>
+                    </div>
+                    <div class="question-text">
+                        <p class="question__text_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cumque unde cum, distinctio perferendis possimus! Vero quis tempore molestias veniam impedit magnam voluptas distinctio maiores ducimus? Quo omnis a dicta?</p>
+                    </div>
+                </article>
+            </div>
+            <div class="section-center">
+                <article class="question">
+                    <div class="d-flex justify-content-between align-items-center text-capitalize question-title">
+                        <p class="fw-bold text-capitalize question__title_p">is it safe to use swappers?</p>
+                        <button class="bg-transparent question-btn">
+                            <span class="plus-icon"><i class="fa-solid fa-circle-plus"></i></span>
+                            <span class="minus-icon"><i class="fa-solid fa-circle-minus"></i></span>
+                        </button>
+                    </div>
+                    <div class="question-text">
+                        <p class="question__text_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cumque unde cum, distinctio perferendis possimus! Vero quis tempore molestias veniam impedit magnam voluptas distinctio maiores ducimus? Quo omnis a dicta?</p>
+                    </div>
+                </article>
+            </div>
+            <div class="section-center">
+                <article class="question">
+                    <div class="d-flex justify-content-between align-items-center text-capitalize question-title">
+                        <p class="fw-bold text-capitalize question__title_p">why swappers is the best option to exchange services or products?</p>
+                        <button class="bg-transparent question-btn">
+                            <span class="plus-icon"><i class="fa-solid fa-circle-plus"></i></span>
+                            <span class="minus-icon"><i class="fa-solid fa-circle-minus"></i></span>
+                        </button>
+                    </div>
+                    <div class="question-text">
+                        <p class="question__text_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cumque unde cum, distinctio perferendis possimus! Vero quis tempore molestias veniam impedit magnam voluptas distinctio maiores ducimus? Quo omnis a dicta?</p>
+                    </div>
+                </article>
+            </div>
+            <div class="section-center">
+                <article class="question">
+                    <div class="d-flex justify-content-between align-items-center text-capitalize question-title">
+                        <p class="fw-bold text-capitalize question__title_p">where can I contact support?</p>
+                        <button class="bg-transparent question-btn">
+                            <span class="plus-icon"><i class="fa-solid fa-circle-plus"></i></span>
+                            <span class="minus-icon"><i class="fa-solid fa-circle-minus"></i></span>
+                        </button>
+                    </div>
+                    <div class="question-text">
+                        <p class="question__text_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cumque unde cum, distinctio perferendis possimus! Vero quis tempore molestias veniam impedit magnam voluptas distinctio maiores ducimus? Quo omnis a dicta?</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="text-center users_experiences" name="experiences" id="experiences">
+            <h3 class="quienes-somos__titulo">¿You're looking for something new?</h3>
+            <p class="mb-3 quienes-somos__descripcion">Hundreds of users have already lived the swappers experience</p>
+            <div class="d-flex justify-content-around personas">
+                <div class="d-flex flex-column">
+                    <div class="persona__imagen persona__imagen--roberta"></div>
+                    <span class="persona__nombre">Roberta</span>
+                    <span class="persona__comentario">This platform has allowed me to connect with more people
+                        They are looking for you to evaluate their products or services. I have been impressed
+                        the great human and professional quality of these swappers.</span>
+                    <span class="mt-4 persona__funcion">Content creator</span>
+                </div>
+                <div class="d-flex flex-column">
+                    <div class="persona__imagen persona__imagen--marcela"></div>
+                    <span class="persona__nombre">Marcela</span>
+                    <span class="persona__comentario">I can sometimes trade tools and recipes with other trader. My network of professional contacts has been growing and when I need something that I don't know how to do, I just look for someone who matches.</span>
+                    <span class="mt-4 persona__funcion">Chef</span>
+                </div>
+                <div class="d-flex flex-column">
+                    <div class="persona__imagen persona__imagen--julian"></div>
+                    <span class="persona__nombre">Julian</span>
+                    <span class="persona__comentario">Redeeming my things that no longer serve me and that others in the community can be of great use to is a great plus. Swappers is my first option in terms of security, trust and services with committed people.</span>
+                    <span class="mt-4 persona__funcion">Small producer</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="rodapePrincipal">
+        <div class="container">
+            <section class="rodapePrincipal-navMap">
+                <h3 class="subtitulo ms-5 fs-5">Site Map</h3>
+                <hr class="line__footer_separator">
+                <nav class="rodapePrincipal-navMap-list d-flex flex-row justify-content-around">
+                    <div class="d-flex flex-column">
+                        <h4 class="navmap-list-title navmap-list-title-backend">Swappers</h4>
+                        <a class="rodapePrincipal-navMap-link" href="#experiences">Experiences</a>
+                        <a class="rodapePrincipal-navMap-link" href="#explore_services">Professional services</a>
+                        <a class="rodapePrincipal-navMap-link" href="#explore_services">Business</a>
+                        <a class="rodapePrincipal-navMap-link" href="#explore_services">Houses</a>
+                        <a class="rodapePrincipal-navMap-link" href="#explore_services">Tickets and events</a>
+                        <a class="rodapePrincipal-navMap-link" href="#explore_services">Hobbies</a>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <h4 class="navmap-list-title navmap-list-title-frontend">Company</h4>
+                        <a class="rodapePrincipal-navMap-link" href="#faq">About us</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Confidence</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Jobs</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Discover Swappers</a>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <h4 class="navmap-list-title navmap-list-title-framework">Media</h4>
+                        <a class="rodapePrincipal-navMap-link" href="#">Blog</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Press</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Facebook</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Instagram</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Youtube</a>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <h4 class="navmap-list-title navmap-list-title-bancoDeDados">Help & Support</h4>
+                        <a class="rodapePrincipal-navMap-link" href="#faq">How does it work?</a>
+                        <a class="rodapePrincipal-navMap-link" href="#faq">FAQ</a>
+                        <a class="rodapePrincipal-navMap-link" href="#faq">Contact us</a>
+                    </div>
+                </nav>
+            </section>
+        </div>
+        <section class="rodapePrincipal-patrocinadores footer bg-white">
+            <div class="container d-flex flex-row justify-content-between align-items-center">
+                <ul class="rodapePrincipal-patrocinadores-list">
+                    <li>
+                        <a class="rodapePrincipal-patrocinadores-list-link patrocinadores-list-link-alura" href="#">
+                            <img src="{{ url_for('static', filename = 'imgs/logo.jpeg') }}" alt="Logo swappers" style="height: 120px;">
+                        </a>
+                    </li>
+                </ul>
+                <form class="rodapePrincipal-contatoForm" action="#">
+                    <fieldset class="d-flex flex-row align-items-center">
+                        <legend class="rodapePrincipal-contatoForm-legend label fs-5 fw-700 me-2 mt-2" for="email-contato">Get in touch
+                        </legend>
+                        <div class="rodapePrincipal-contatoForm-fieldset d-flex flex-row align-items-center">
+                            <input class="rodapePrincipal-contatoForm-emailInput rounded" type="email" name="email-contato"
+                                id="email-contato">
+                            <button class="rodapePrincipal-contatoForm-submit btn btn-outline-success fw-800" style="width: 120px; height: 40px;" type="submit">Send</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.3.js"
+        integrity="sha256-goy7ystDD5xbXSf+kwL4eV6zOPJCEBD1FBiCElIm+U8=" crossorigin="anonymous" type="text/javascript">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='/js/index.js') }}"></script>
 </body>
 </html>

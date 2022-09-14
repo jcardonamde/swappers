@@ -1,0 +1,29 @@
+.section__main_card_services {
+    background-color: var(--background-logo);
+    margin-top: -10px;
+}
+
+.main__title_card_services {
+    font-size: 45px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.section__card_services {
+    margin-top: 50px;
+}
+
+.img__card_services {
+    margin-top: 7px;
+    height: 32px;
+    width: 32px;
+}
+
+.contents__card_services {
+    background-color: var(--background-cards);
+    font-size: 18px;
+}
+
+.header__card_services {
+    height: 77.08px;
+}

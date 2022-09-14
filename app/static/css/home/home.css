@@ -1,0 +1,71 @@
+body {
+    background-color: var(--background-logo);
+}
+
+/*Section User Comments*/
+.users_experiences {
+    padding: 5rem;
+}
+
+.quienes-somos__titulo {
+    color: var(--text-content5);
+    font-family: Pacifico, cursive;
+    font-size: 3.1875rem;
+    margin-bottom: 1rem;
+}
+
+.quienes-somos__descripcion {
+    color: var(--text-content7);
+    font-size: 1.75rem;
+    font-weight: 100;
+}
+
+.personas {
+    padding-top: 3rem;
+}
+
+.persona__imagen {
+    border-radius: 100%;
+    height: 300px;
+    width: 300px;
+}
+
+.persona__imagen--roberta {
+    background: url('/static/imgs/people/roberta.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.persona__imagen--marcela {
+    background: url('/static/imgs/people/marcela.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.persona__imagen--julian {
+    background: url('/static/imgs/people/julian.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.persona__nombre {
+    color: var(--text-content5);
+    font-family: Pacifico, cursive;
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
+.persona__comentario {
+    font-size: 1.50rem;
+    width: 300px;
+}
+
+.persona__funcion {
+    color: var(--text-content7);
+    font-size: 1.25rem;
+    text-transform: lowercase;
+}

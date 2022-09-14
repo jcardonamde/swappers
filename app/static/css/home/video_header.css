@@ -1,0 +1,44 @@
+body {
+    font-family: var(--Questrial);
+}
+
+.background__video_home {
+    filter: brightness(30%);
+    height: 100vh;
+    object-fit: cover;
+    width: 100%;
+    z-index: -1;
+}
+
+.call__action_description {
+    height: 340px;
+    padding: 20px;
+}
+
+.call__action_description h1 {
+    font-family: var(--Mulish);
+    font-size: 68px;
+}
+
+.call__action_description h2 {
+    font-family: var(--Mulish);
+    font-size: 32px;
+}
+
+.call__action_description button {
+    background-color: var(--text-content2);
+    height: 18px;
+    margin-left: 1px;
+    margin-top: 93px;
+    width: 18px;
+}
+
+.call__action_searchs {
+    height: 108px;
+}
+
+.search_service-button {
+    height: 47px;
+    margin-top: 30px;
+    width: 160px;
+}

@@ -1,0 +1,120 @@
+body {
+    background-color: var(--background-logo);
+    font-family: var(--Questrial);
+}
+
+img {
+    width: 100%;
+}
+
+/* +++++++++++++++++++ */
+/* Styles for Global Div */
+/* +++++++++++++++++ */
+.container__login {
+    background-color: var(--background-logo);
+    height: 920px;
+    width: 100%;
+
+}
+
+.login_box {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 4px 22px -8px #0004;
+    margin-top: 5rem;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+}
+
+.login_box .container__login_left {
+    height: 100%;
+    padding: 25px 25px;
+    width: 60%;
+}
+
+.container__login_left {
+    background: linear-gradient(-45deg, #dcd7e0, #fff);
+}
+
+.login_box .container__login_right {
+    height: 100%;
+    width: 59%;
+}
+
+
+/* +++++++++++++++++++ */
+/* Styles for Div Login */
+/* +++++++++++++++++ */
+.top__link {
+    color: var(--text-content-forms);
+    height: 20px;
+}
+
+.top_link img {
+    margin-top: -0.188rem;
+    padding-right: 0.438rem;
+    width: 1.75rem;
+}
+
+.form__login {
+    align-self: center;
+    height: 100%;
+    margin: auto;
+    width: 73%;
+}
+
+.container__login_left input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-input-forms);
+    font-size: 15px;
+    font-weight: 600;
+    margin: 15px 0px;
+    overflow: hidden;
+    padding: 7px 9px;
+    width: 100%;
+}
+
+.btn__login {
+    background-color: var(--background-logo);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+    -webkit-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+    -moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+    color: var(--text-links-nav);
+    display: block;
+    margin: auto;
+    margin-top: 70px;
+    padding: 15px 70px;
+}
+
+.btn__login:hover {
+    color: var(--text-content-hover1);
+}
+
+
+/* +++++++++++++++++++ */
+/* Styles for Div Gif */
+/* +++++++++++++++++ */
+.container__login_right {
+    background: url('/static/imgs/gifs/user.gif');
+    background-repeat: no-repeat;
+    background-size: 619px 750px;
+    color: #fff;
+    filter: brightness(80%);
+    position: relative;
+}
+
+.right-text {
+    color: var(--text-content-gifs);
+    position: absolute;
+    top: 5px;
+    left: 20%;
+    transform: translate(0%, 45%);
+}
+
+.right-text h2 {
+    display: block;
+    font-size: 50px;
+}
