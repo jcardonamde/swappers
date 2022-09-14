@@ -1,0 +1,40 @@
+:root {
+    /* Color principal */
+    --background-logo: #c5ec87;
+    --background-content: #95e0e3;
+    --background-header: #FFFFFF;
+    --background-cards: #98c1d9;
+    --background-faq-stories: #FFFFFF;
+    --background-content-faq-stories: #324C64;
+    --background-footer-main: #324C64;
+    --background-footer: #95e0e3;
+    --background-404: #181828;
+
+    /* Color secundario */
+    --text-content1: #7ad1e3;
+    --text-content2: #c5ec87;
+    --text-content3: #9ed4de;
+    --text-content4: #95e0e3;
+    --text-content5: #FFFFFF;
+    --text-content6: #9ACD32;
+    --text-content7: #595959;
+    --text-content-forms: #452A5A;
+    --border-input-forms:#4f30677d;
+    --text-content-gifs: #0B5ED7;
+    --text-links-nav: #000000;
+    --text-content-hover1: #FFFFFF;
+    
+    /*Fuentes proyecto*/ 
+    --Questrial: 'Questrial', sans-serif; /*Fuente de Marca */
+    --Mulish: 'Mulish', sans-serif; /*Fuente contenidos globales*/
+
+
+    /*Sin aplicar*/
+    /*background: #f2eee3;*/
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}   

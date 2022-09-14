@@ -1,0 +1,17 @@
+nav {
+    font-family: var(--Mulish);
+}
+
+.nav__bar_slogan {
+    color: var(--text-content1);
+    margin-left: 12.5rem;
+}
+
+.nav__bar_links_option {
+    color: var(--text-content1);
+}
+
+.nav__bar_links_active {
+    background-color: var(--background-logo);
+    color: var(--text-links-nav);
+}

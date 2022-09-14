@@ -68,7 +68,7 @@ h3:hover{
     color:  rgb(122,209,227);
 }
 
-footer{
+/* footer{
     display: flex;
     justify-content: space-evenly;
     margin-top: 150px;
@@ -81,7 +81,7 @@ footer{
     opacity: 80%;
     border: solid rgb(122,209,227);
     
-}
+} */
 footer li b{
     display: flex;
     justify-content: space-between;
@@ -110,3 +110,6 @@ text-align: center;
 .filtros{
 margin-bottom: 30px;
 }
+
+
+
