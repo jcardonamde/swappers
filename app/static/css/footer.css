@@ -45,6 +45,7 @@
 	margin-top: 30px;
 	background: #F2F5F7;
 	padding: 20px 0;
+	height: 150px;
 }
 
 .rodapePrincipal-contatoForm {
@@ -69,10 +70,9 @@
 .rodapePrincipal-contatoForm-submit {
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
-	background-color: #4DBA7A;
-	color: #FFF;
 	cursor: pointer;
-	
+	background-color: var(--background-logo);
+    color: var(--text-links-nav);
 }
 
 .rodapePrincipal-contatoForm-submit,
@@ -81,41 +81,6 @@
 	border: 1px solid #4DBA7A;
 	box-sizing: border-box;
 	font-size: 16px;
-}
-
-.videoSobre {
-	background-color: #5E9EDC;
-	padding: 25px 0;
-
-}
-
-.videoSobre-video {
-	max-width: 100%;
-}
-
-.videoSobre .container {
-	color: #FFF;
-}
-
-.videoSobre-sobre-title {
-	font-size: 1.2em;
-	font-weight: bolder;
-}
-
-.videoSobre-sobre {
-	font-size: 1.3em;
-	line-height: 2;
-}
-
-.videoSobre-button {
-	border-radius: 8px;
-	background-color: #ec6e5a;
-	display: block;
-	color: #FFF;
-	border: none;
-	height: 50px;
-	font-size: .8em;
-	outline: none;
 }
 
 .rodapePrincipal-contatoForm-legend {

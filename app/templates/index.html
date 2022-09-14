@@ -405,18 +405,18 @@
                 <ul class="rodapePrincipal-patrocinadores-list">
                     <li>
                         <a class="rodapePrincipal-patrocinadores-list-link patrocinadores-list-link-alura" href="#">
-                            <img src="{{ url_for('static', filename = 'imgs/logo.jpeg') }}" alt="Logo swappers">
+                            <img src="{{ url_for('static', filename = 'imgs/logo.jpeg') }}" alt="Logo swappers" style="height: 120px;">
                         </a>
                     </li>
                 </ul>
                 <form class="rodapePrincipal-contatoForm" action="#">
-                    <fieldset>
-                        <legend class="rodapePrincipal-contatoForm-legend label fs-5 ms-3" for="email-contato">get in touch
+                    <fieldset class="d-flex flex-row align-items-center">
+                        <legend class="rodapePrincipal-contatoForm-legend label fs-5 fw-700 me-2 mt-2" for="email-contato">Get in touch
                         </legend>
-                        <div class="rodapePrincipal-contatoForm-fieldset">
-                            <input class="rodapePrincipal-contatoForm-emailInput" type="email" name="email-contato"
+                        <div class="rodapePrincipal-contatoForm-fieldset d-flex flex-row align-items-center">
+                            <input class="rodapePrincipal-contatoForm-emailInput rounded" type="email" name="email-contato"
                                 id="email-contato">
-                            <button class="rodapePrincipal-contatoForm-submit btn btn-success" type="submit">Send</button>
+                            <button class="rodapePrincipal-contatoForm-submit btn btn-outline-success fw-800" style="width: 120px; height: 40px;" type="submit">Send</button>
                         </div>
                     </fieldset>
                 </form>

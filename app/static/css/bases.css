@@ -12,18 +12,21 @@
     --text-content3: #9ed4de;
     --text-content4: #95e0e3;
     --text-content5: #FFFFFF;
+    --text-content-forms: #452A5A;
+    --border-input-forms:#4f30677d;
+    --text-content-gifs: #0B5ED7;
     --text-links-nav: #000000;
+    --text-content-hover1: #FFFFFF;
 
-
+    
     /*Sin aplicar*/
     --background-main: #E5E5E5;
-    
     --background-404: #138FF2;
+    /*background: #f2eee3;*/
     /*Sin aplicar*/
     --background-hover-button: #FFC300;
     --text-search-bar: #F5F5F5;
-    --text-content-hover1: #0B5ED7;
-    --text-content-hover2: #FFC300;
+    
     --text-content-hover3: #DC3545;
     
     /*Fuentes proyecto*/ 

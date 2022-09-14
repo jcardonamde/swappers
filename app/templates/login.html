@@ -18,25 +18,32 @@
 </head>
 <body>
     <main>
-        <section class="login">
-            <div class="login_box">
-                <div class="left">
-                    <div class="top_link"><a href="/"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="">Return home</a></div>
-                    <div class="contact">
-                        <form action="" method="post">
-                            <h3>SIGN IN</h3>
-                            <input type="text" placeholder="USERNAME">
-                            <input type="text" placeholder="PASSWORD">
-                            <button class="submit">LET'S GO</button>
+        <section class="container container__login">
+            <div class="d-flex login_box" style="height: 750px; width: 1050px;">
+                <div class="container__login_left">
+                    <div class="d-flex align-items-center top_link" style="height: 20px;">
+                        <a href="/" class="d-flex align-items-center fw-400 fs-6">
+                            <img src="{{ url_for('static', filename = 'imgs/icons/return.svg') }}" alt="logo return">Return home
+                        </a>
+                    </div>
+                    <div class="container mt-1 d-flex justify-content-center align-items-center form__login">
+                        <form action="/login_user" method="post" id="formLogin">
+                            <h3 class="fs-4 fw-bold text-center mb-4">SIGN IN</h3>
+                            <div class="form-group" style="width: 350px;">
+                                <input type="email" name="email" id="email" placeholder="USERNAME" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" id="password" placeholder="PASSWORD" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-outline-success fw-bold btn__login">¡ LET'S GO !</button>
                         </form>
                     </div>
                 </div>
-                <div class="right">
+                <div class="container__login_right">
                     <div class="right-text">
-                        <h2>LOGO</h2>
-                        <h5>A great company to work with!</h5>
+                        <h2 class="text-center fw-700 w-auto">Swapper Time</h2>
+                        <h5 class="fs-5 text-center fw-500 w-auto mt-2">We have a world of solutions for you!</h5>
                     </div>
-                    <div class="right-inductor"><img src="" alt=""></div>
                 </div>
             </div>
         </section>
