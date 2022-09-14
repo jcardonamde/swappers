@@ -1,5 +1,5 @@
 from crypt import methods
-from flask import render_template, redirect, session, request, flash
+from flask import render_template, redirect, session, request, flash, jsonify
 from app import app
 from app.models.users import User
 from app.models.services import Service
@@ -29,6 +29,11 @@ def registro():
     return render_template('register.html')
 
 
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('errors/404.html'), 404 #status200
+
 # Template Dashboard
 @app.route('/dashboard', methods=['POST'])
 def dashboard():
@@ -39,12 +44,12 @@ def dashboard():
     }
     city = { "city" : request.form["city"] }
     type_service = { "type_service" : request.form["type_service"] }
-    services = Service.get_all()
+    all_services = Service.get_all()
     filter_city = Service.filter_services_by_city(city)
     filter_type = Service.filter_services_by_type_services(type_service)
     user = User.get_by_id(formulario)
     matches= match.match(formulario)
-    return render_template('dashboard.html', user=user, services=services, filter_city=filter_city, filter_type=filter_type, matches= matches)
+    return render_template('dashboard.html', user=user, all_services=all_services, filter_city=filter_city, filter_type=filter_type, matches= matches)
 
 
 
@@ -93,3 +98,10 @@ def register():
 
     session['user_id'] = id
     return redirect('/dashboard')
+
+
+#Cerrar Sesion
+@app.route('/logout', methods=['POST'])
+def logout():
+    session.clear()
+    return redirect('/')

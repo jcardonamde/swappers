@@ -45,6 +45,23 @@ def match_service(service_id, user_id):
     return redirect('/dashboard')
 
 
+# Template edit service
+@app.route('/edit/sevice/<int:service_id>') 
+def edit_service(service_id):
+    if 'user_id' not in session: 
+        return redirect('/')
+    
+    formulario = {
+        "id": session['user_id']
+    }
+
+    user = User.get_by_id(formulario)
+    formulario_service = { "service_id": service_id }
+
+    services = Service.get_by_id(formulario_service)
+
+    return render_template('edit.html', user=user, services=services)
+
 #Edit services
 @app.route('/edit_service', methods=['POST'])
 def edit_service():
