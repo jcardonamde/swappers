@@ -29,20 +29,29 @@
                     <div class="container mt-1 d-flex justify-content-center align-items-center form__register">
                         <form action="/register" method="post" id="formRegister">
                             <h3 class="fs-4 fw-bold text-center mb-4">REGISTER</h3>
+                            {% with messages = get_flashed_messages(category_filter=['register']) %}
+                                {% if messages %}
+                                    <div class="alert alert-danger">
+                                    {% for message in messages %}
+                                        <p>{{message}}</p>
+                                    {% endfor %}
+                                    </div>
+                                {% endif %}
+                            {% endwith %}
                             <div class="form-group" style="width: 350px;">
-                                <input type="text" name="first_name" id="first_name" placeholder="First Name" class="form-control">
+                                <input type="text" name="first_name" id="first_name" placeholder="First Name" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="last_name" id="last_name" placeholder="Last Name" class="form-control">
+                                <input type="text" name="last_name" id="last_name" placeholder="Last Name" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="nickname" id="nickname" placeholder="Nickname" class="form-control">
+                                <input type="text" name="nickname" id="nickname" placeholder="Nickname" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <input type="email" name="email" id="email" placeholder="Email" class="form-control">
+                                <input type="email" name="email" id="email" placeholder="Email" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" id="city" name="city">
+                                <select class="form-select" id="city" name="city" required>
                                     <option selected>Select a city</option>
                                     <option value="1">Bogota</option>
                                     <option value="2">Medellin</option>
@@ -53,13 +62,13 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <input type="password" name="password" id="password" placeholder="Password" class="form-control">
+                                <input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" class="form-control">
+                                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <input type="file" name="image" id="image" placeholder="Add image URL" class="form-control" style="resize: none;"></textarea>
+                                <input type="file" name="image" id="image" placeholder="Add image URL" class="form-control" style="resize: none;" required>
                             </div>
                             <button type="submit" class="btn btn-outline-success fw-bold mt-4 btn__register">JOIN</button>
                         </form>
