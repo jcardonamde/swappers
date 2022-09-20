@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/header.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/bases.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/footer.css') }}" />
+    <title>Experiencias que Conectan | Swappers</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar justify-content-between p-1 nav__bar bg-white">
+            <a class="navbar-brand nav__bar_logo-a" href="/">
+                <img src="static/imgs/swappers.PNG" alt="Logo Swappers"
+                    class="nav__bar_logo ms-4">
+            </a>
+            <p class="nav__bar_slogan mt-3">Welcome {{user.first_name}}</p>
+            <ul class="nav nav-pills d-flex align-items-center m-3 nav__bar_links">
+                <li class="nav-item">
+                    <a href="/dashboard" class="nav-link nav__bar_links_option">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/logout" class="btn btn-outline-success btn-md nav__bar_links_active">Log out</a> <!--   Revisar ruta? -->
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <div>
+            {% with messages = get_flashed_messages(category_filter=['add_service']) %}
+                {% if messages %}
+                    <div class="alert alert-danger">
+                        {% for message in messages %}
+                            <p>{{message}}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            <form action="/edit_service" method="post" style="margin-top: 20px;">  <!---- ruta del controlador ----->
+                <input type="hidden" name="user_id" value="{{user.id}}">
+                <input type="hidden" name="id" value="{{service.id}}"> 
+                <div class="form-group" style="margin-top: 20px;">
+                    <label for="name">Service name</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Put here the name of the service" value="{{service.name}}"> <!-- nombre del servicio -->
+                </div>
+                <div class="form-group" style="margin-top: 20px;">
+                    <label for="type_service" class="type_service_label">What service are you offering?</label>
+                    <select class="form-select type_service_select" id="type_service" name="type_service" value="{{service.type_service}}">  <!---- tipo de servicio ----->
+                        <option selected>Select a service</option>
+                        <option value="1">Dancing</option>
+                        <option value="2">Photografy</option>
+                        <option value="3">Sports</option>
+                        <option value="4">Arts</option>
+                        <option value="5">Cooking</option>
+                        <option value="6">Teaching</option>
+                        <option value="7">Music</option>
+                        <option value="8">Coding</option>
+                        <option value="9">Others</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-top: 20px;">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description" name="description" placeholder="Put here a description of your service">{{service.description}}</textarea>
+                </div>
+                <input style="margin:20px; float:right" type="submit" class="btn btn-outline-success btn-md links_active"  value="Guardar">
+            </form>
+        </div>
+    </main>
+    <footer class="rodapePrincipal">
+        <div class="container">
+            <section class="rodapePrincipal-navMap">
+                <h3 class="subtitulo ms-5">Site Map</h3>
+                <nav class="rodapePrincipal-navMap-list d-flex flex-row justify-content-around">
+                    <div class="d-flex flex-column">
+                        <h4 class="navmap-list-title navmap-list-title-backend">Services</h4>
+                        <a class="rodapePrincipal-navMap-link" href="#">Java</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">PHP</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Pascal</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Scala</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Python</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Java Web</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Assembly</a>
+                    </div>
+                    
+                    <div class="d-flex flex-column">
+                        <h4 class="navmap-list-title navmap-list-title-frontend">Lenguajes Frontend</h4>
+                        <a class="rodapePrincipal-navMap-link" href="#">Flexbox</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Desarrollo Web</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Javascript</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">AngularJS</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">ReactJS</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Polymer</a>
+                    </div>
+
+                    <div class="d-flex flex-column">
+                        <h4 class="navmap-list-title navmap-list-title-framework">Frameworks</h4>
+                        <a class="rodapePrincipal-navMap-link" href="#">Ruby on Rails</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">VRaptor</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">SpringMVC</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">NodeJS</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Django</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Bootstrap3</a>
+                    </div>
+
+                    <div class="d-flex flex-column">
+                        <h4 class="navmap-list-title navmap-list-title-bancoDeDados">Banco de datos</h4>
+                        <a class="rodapePrincipal-navMap-link" href="#">MySQL</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">MariaDB</a>
+                        <a class="rodapePrincipal-navMap-link" href="#">Postegres</a>
+                    </div>
+                </nav>
+            </section>
+        </div>
+        <section class="rodapePrincipal-patrocinadores">
+            <div class="container">
+                <ul class="rodapePrincipal-patrocinadores-list">
+                    <li>
+                        <a class="rodapePrincipal-patrocinadores-list-link patrocinadores-list-link-alura" href="#">
+                            <img src="img/logos/alura.svg" alt="Logo da Alura">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="rodapePrincipal-patrocinadores-list-link patrocinadores-list-link-caelum" href="#">
+                            <img src="img/logos/caelum.svg" alt="Logo da Caelum">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="rodapePrincipal-patrocinadores-list-link patrocinadores-list-link-casaDoCodigo"
+                            href="#">
+                            <img src="img/logos/cdc.svg" alt="Logo da Casa do Código">
+                        </a>
+                    </li>
+                </ul>
+                <form class="rodapePrincipal-contatoForm" action="#">
+                    <fieldset>
+                        <legend class="rodapePrincipal-contatoForm-legend" for="email-contato">Entre en contacto
+                        </legend>
+                        <div class="rodapePrincipal-contatoForm-fieldset">
+                            <input class="rodapePrincipal-contatoForm-emailInput" type="email" name="email-contato"
+                                id="email-contato">
+                            <button class="rodapePrincipal-contatoForm-submit" type="submit">Enviar</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </footer>
+
+    <script src="" crossorigin="anonymous">
+    </script>
+    <script src="{{ url_for('static', filename='/js/index.js') }}"></script>
+</body>
+
+</html>
